@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>User Registration</h2>
+
+<form method="POST">
+
+<input type="text" name="name" placeholder="Enter Name" required>
+
+<input type="email" name="email" placeholder="Enter Email" required>
+
+<input type="password" name="password" placeholder="Enter Password" required>
+
+<input type="text" name="phone" placeholder="Enter Phone" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+{% endblock %}

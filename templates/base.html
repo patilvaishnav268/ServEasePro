@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Service Finder</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Service Finder System</h1>
+
+<nav>
+
+<a href="/">Home</a>
+
+{% if session.user_id %}
+<span>Welcome {{ session.user_name }}</span>
+<a href="/logout">Logout</a>
+{% else %}
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+{% endif %}
+
+</nav>
+
+</header>
+
+<div class="container">
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p class="message">{{ msg }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+<footer>
+
+<p>© 2026 Service Finder System</p>
+
+</footer>
+
+</body>
+</html>

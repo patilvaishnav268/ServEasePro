@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Service Details</h2>
+
+<div class="service-card">
+
+<h3>{{ service.name }}</h3>
+
+<p>{{ service.description }}</p>
+
+<p><b>Price:</b> ₹{{ service.price }}</p>
+
+<p><b>Provider:</b> {{ service.provider }}</p>
+
+{% if session.user_id %}
+
+<a href="/book/{{ service.id }}" class="btn">Book Service</a>
+
+{% else %}
+
+<p>Please login to book service</p>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

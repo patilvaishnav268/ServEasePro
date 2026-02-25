@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Available Services</h2>
+
+<div class="service-container">
+
+{% for service in services %}
+
+<div class="service-card">
+
+<h3>{{ service.name }}</h3>
+
+<p>{{ service.description }}</p>
+
+<p><b>Price:</b> ₹{{ service.price }}</p>
+
+<a href="/service/{{ service.id }}" class="btn">View Details</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
